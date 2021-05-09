@@ -12,7 +12,7 @@ abstract class BasicController<T, ID>( private val basicCRUD: BasicCRUD<T, ID>) 
     fun findAll() = basicCRUD.findAll()
 
     @GetMapping( "/{id}" )
-    fun findById(@PathVariable id: ID ): ResponseEntity<T> {
+    fun findById(  @PathVariable id: ID ): ResponseEntity<T> {
         val entity = basicCRUD.findById(id)
         return ResponseEntity.status(
             if( entity != null ) HttpStatus.OK else HttpStatus.NO_CONTENT

@@ -1,7 +1,7 @@
 package com.jaax.senseme.entities
 
 import com.fasterxml.jackson.annotation.JsonFormat
-import java.util.*
+import java.util.Date
 import javax.persistence.*
 
 @Entity
@@ -14,7 +14,7 @@ data class Recordatorio(
     @Column( name = "texto" )
     var text: String = "",
     @Column( name = "fecha" )
-    @Temporal( value = TemporalType.DATE )
-    @JsonFormat( pattern = "dd-MM-yyyy" )
+    @JsonFormat( pattern = "yyyy-MM-dd" )
+    @Temporal( TemporalType.TIMESTAMP )
     var date: Date
 )
