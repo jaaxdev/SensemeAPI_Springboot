@@ -10,7 +10,7 @@ import javax.persistence.EntityNotFoundException
 @Service
 class RecordatorioService( val recordatorioDAO: RecordatorioDAO ): BasicCRUD<Recordatorio, Int> {
 
-    override fun findAll() = recordatorioDAO.findAll()
+    override fun findAll(): MutableList<Recordatorio> = recordatorioDAO.findAll()
 
     override fun findById(id: Int) = recordatorioDAO.findByIdOrNull( id )
 
